@@ -1,9 +1,9 @@
-#### Create Private DNS Zone with forwarding
+#### 1. Create Private DNS Zone with forwarding
 Note: 10.128.0.46 is the DNS server node (vm)
 ![private dns zone](./img/private_dns_zone.png)
 
 
-#### Create the following four VMs
+#### 2. Create the following four VMs
 ![three VMs](./img/four_vms.png)  
 glau1-vm: DNS Server  
 glau2-vm: glau2.glau.private  
@@ -11,7 +11,7 @@ glau3-vm: glau3.glau.private
 glau4-vm: client (to verify DNS setting using FQDNs of glau2-vm and glau3-vm)
     
 
-#### Create DNS Server on Ubuntu 18.04 LTS
+#### 3. Create DNS Server on Ubuntu 18.04 LTS
 ```
 sudo apt update
 sudo apt upgrade
@@ -61,7 +61,7 @@ glau2-vm        IN      A       10.128.0.49
 glau3-vm        IN      A       10.128.0.53
 ```
 
-#### Verify DNS setup
+#### 4. Verify DNS setup
 The first checks the global configuration files and is used as follows:
 ```
 sudo named-checkconf /etc/bind/named.conf.options
@@ -108,7 +108,7 @@ sudo systemctl restart bind9.service
 Now, if BIND stop running for any reason, systemd will restart it again automatically.
   
 
-#### Test the DNS Server
+#### 5. Test the DNS Server
 ```
 dig @10.128.0.46 -t A glau2-vm.glau.private
 ```
@@ -177,7 +177,7 @@ ns1.glau.private.       86400   IN      A       10.128.0.46
 ```
 
 
-#### Test the FQDNs from glau4-vm
+#### 6. Test the FQDNs from glau4-vm
 ```
 nslookup glau2-vm.glau.private
 ```
@@ -206,6 +206,6 @@ Address: 10.128.0.53
 ```
 
 
-#### Troubleshooting
+#### 7. Troubleshooting
 1. If nslookup does not return the correct IP address, run this command: **sudo systemd-resolve --flush-caches**
 
