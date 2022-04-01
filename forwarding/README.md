@@ -39,7 +39,7 @@ zone    "glau.private"   {
 ```
 
 ```
-sudo nano /etc/bind/forward.example.com
+sudo nano /etc/bind/forward.glau.private
 ```
 Enter the following content:
 ```
