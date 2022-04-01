@@ -4,7 +4,7 @@ Note: 10.128.0.46 is the DNS server node (vm)
 
 
 #### Create the following four VMs
-![three VMs](./img/four_vms.png)
+![three VMs](./img/four_vms.png)  
 glau1-vm: DNS Server  
 glau2-vm: glau2.glau.private  
 glau3-vm: glau3.glau.private  
