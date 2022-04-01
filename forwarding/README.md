@@ -1,7 +1,7 @@
 #### 1. Create Private DNS Zone with forwarding
 Note: 10.128.0.46 is the DNS server node (vm)
 ![private dns zone](./img/private_dns_zone.png)
-
+![private dns zone 2](./img/private_dns_zone_2.png)
 
 #### 2. Create the following four VMs
 ![three VMs](./img/four_vms.png)  
