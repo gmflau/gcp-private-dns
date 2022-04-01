@@ -20,7 +20,7 @@ sudo apt install bind9 bind9utils bind9-doc dnsutils
 ```
   
 ```
-sudo nano /etc/bind/named.conf.local
+sudo vi /etc/bind/named.conf.local
 ```
 Enter the following content:
 ```
@@ -39,7 +39,7 @@ zone    "glau.private"   {
 ```
 
 ```
-sudo nano /etc/bind/forward.glau.private
+sudo vi /etc/bind/forward.glau.private
 ```
 Enter the following content:
 ```
@@ -87,7 +87,7 @@ sudo cp /lib/systemd/system/bind9.service /etc/systemd/system/
 
 This will ensure that the edits will not be lost in future system updates. Next, open the file in an editor:
 ```
-sudo nano /etc/systemd/system/bind9.service
+sudo vi /etc/systemd/system/bind9.service
 ```
 
 And add the following two lines to the [Service] section:
