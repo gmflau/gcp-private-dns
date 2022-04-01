@@ -177,7 +177,7 @@ ns1.glau.private.       86400   IN      A       10.128.0.46
 ```
 
 
-#### 6. Test the FQDNs from glau4-vm
+#### 6. Test the FQDNs from glau4-vm from the same region and same zone
 ```
 nslookup glau2-vm.glau.private
 ```
@@ -205,7 +205,36 @@ Name:   glau3-vm.glau.private
 Address: 10.128.0.53
 ```
 
+#### 7. Test the FQDNs from glau6-vm from a different region and zone
+![glau6-vm](./img/glau6-vm.png)   
+```
+nslookup glau2-vm.glau.private
+```
+It should return:
+```
+Server:         127.0.0.53
+Address:        127.0.0.53#53
 
-#### 7. Troubleshooting
+Non-authoritative answer:
+Name:   glau2-vm.glau.private
+Address: 10.128.0.49
+```
+ 
+Then, run the following command:
+```
+nslookup glau3-vm.glau.private
+```
+It should return the following output:
+```
+Server:         127.0.0.53
+Address:        127.0.0.53#53
+
+Non-authoritative answer:
+Name:   glau3-vm.glau.private
+Address: 10.128.0.53
+```
+
+
+#### 8. Troubleshooting
 1. If nslookup does not return the correct IP address, run this command: **sudo systemd-resolve --flush-caches**
 
